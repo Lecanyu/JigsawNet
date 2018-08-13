@@ -1,0 +1,6 @@
+BGU_ex\
+BGU_ex\filtered_alignments.txt
+8 248 8
+MIT_ex\
+MIT_ex\filtered_alignments.txt
+248 8 232
