@@ -1,7 +1,14 @@
 # JigsawCNN
 JigsawCNN is an image fragment reassembly system. It is able to robustly reassemble irregular shredded image fragments.
 
-Please check our published paper for more details....
+This repository includes CNN-based pairwise alignment measurement and loop-closure based global reassembly. Please check our published paper for more algorithm details....
+
+There are part of reassembly results from various public datasets and our own datasets (1st, 2nd and 3rd row contains 9, 100, 376 piece fragments repectively).
+
+![demon](https://raw.githubusercontent.com/Lecanyu/JigsawNet/master/Examples/demo.png)
+
+
+
 
 
 # 1. Prerequisites
