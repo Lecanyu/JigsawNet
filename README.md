@@ -1,4 +1,5 @@
 # JigsawNet
+
 JigsawNet is an image fragment reassembly system. It is able to robustly reassemble irregular shredded image fragments.
 
 This repository includes CNN-based pairwise alignment measurement and loop-closure based global reassembly. Please check our published paper for more algorithm details....
@@ -34,8 +35,46 @@ If you want to compile or run this code on different environments, a few of modi
 
 # 2. Run pairwise compatibility measurement
 
+We provide three modes to drive our scripts. 
+
+"training": train network on training dataset. Please read the code to make sure all of pathes are set correctly.
+
+"batch_testing": test network performance on tfrecord. You should prepare the testing data before you run.
+
+"single_testing": test network performance on image data. You just need to prepare the pairwise alignment file. The image merging will be done by our program.
+
+Please check the 'Examples' folder for data/file format.
+
+Training
+------------
+python boost.py -m training
+
+batch_testing
+------------
+python boost.py -m batch_testing
+
+single_testing
+------------
+python boost.py -m single_testing
+
+
+We recommend you reading the code to figure out how to modify the path and tune whatever you want. We think the structure of code is relatively clear and it should be self-explanatory.
+
 
 # 3. Run global reassembly
+
+You can find a running example (run.bat) in the 'Examples' folder. 
+Following the corresponding data format, you should be able run after compiling
+
+
+# 4. Run the example data
+
+Put your own compiled GlobalReassembly.exe into Examples folder, and then run the .bat file to reassembly.
+
+If everything goes well, you will get several output files (filtered_alignments.txt, pose_result_x.txt, reassembled_result_x.png and selected_transformation.txt)
+
+We have put those output files into the folders just for refering. 
+
 
 
 # 4. Datasets and pre-trained net parameters

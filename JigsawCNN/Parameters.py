@@ -6,7 +6,7 @@ This file save all of hyperparameters
 WorkSpacePath = {
     "training_dataset_root": "your path",
     "testing_dataset_root": "your path",
-    "example_testing_root": "C:/Users/range/Desktop/JigsawCNN/Examples",
+    "example_testing_root": "../Examples",
     "checkpoint_dir": "C:/Users/range/Desktop/CNN_checkpoint/JigsawArbitraryFragmentsBoost"
 }
 
@@ -18,5 +18,6 @@ NNHyperparameters = {
     "batch_size": 64,
     "weight_decay": 1e-4,
     "learning_rate": 1e-4,
-    "total_training_step": 30000
+    "total_training_step": 30000,
+    "learner_num": 5
 }

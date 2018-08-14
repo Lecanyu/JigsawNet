@@ -13,7 +13,9 @@ import cv2
 import sys
 import Utils
 import PairwiseAlignment2Image
+import argparse
 
+Args = []
 
 def BoostTraining(net, input, roi_box, target, weights, data_ids, tensorboard_dir, checkpoint_dir, is_training=True):
     target_value = target
@@ -472,8 +474,8 @@ def ValidatePathNet(alignments, gt_pose, fragments_dir, net, evaluator, K, Alpha
 
 
 def main(_):
-    mode = "single_testing"
-    K=5
+    mode = Args['mode']
+    K = Parameters.NNHyperparameters["learner_num"]                    # the number of learner for boost training
     params = Parameters.NNHyperparameters
     checkpoint_root = Parameters.WorkSpacePath['checkpoint_dir']
 
@@ -484,8 +486,8 @@ def main(_):
             TFRecordIOWithROI.createTFRecord(tfrecord_filename, dataset_root=training_directory_root)
         total_record = sum(1 for _ in tf.python_io.tf_record_iterator(tfrecord_filename))
         # total_record = 610201
-        D = np.ones(total_record, dtype=np.float32)
-        Alpha = np.zeros(K, dtype=np.float32)
+        D = np.ones(total_record, dtype=np.float32)         # training data weight, it will be modified according to the evalution result to solve the within class imbalance
+        Alpha = np.zeros(K, dtype=np.float32)               # the learner weight which indicates how important the learner is
         '''Each learner'''
         for i in range(K):
             '''train network G'''
@@ -572,4 +574,8 @@ def main(_):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-m', '--mode', help="Choose a net running mode: training, batch_testing or single_testing", required=True)
+    Args = vars(parser.parse_args())
+
     tf.app.run()
