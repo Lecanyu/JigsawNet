@@ -47,16 +47,21 @@ Please check the 'Examples' folder for data/file format.
 
 Training
 ------------
+```
 python boost.py -m training
+```
 
 batch_testing
 ------------
+```
 python boost.py -m batch_testing
+```
 
 single_testing
 ------------
+```
 python boost.py -m single_testing
-
+```
 
 We recommend you reading the code to figure out how to modify the path and tune whatever you want. We think the structure of code is relatively clear and it should be self-explanatory.
 
