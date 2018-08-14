@@ -14,34 +14,39 @@ There are part of reassembly results from various public datasets and our own da
 # 1. Prerequisites
 
 We have tested this code on Windows10 x64 operation system.
-The JigsawCNN part has been implemented on Python 3.6 and tensorflow. 
-The global reassembly part has been implemented on Microsoft Visual Studio 2015 with CUDA 8 or 9 support. 
+We developed a CNN to measure pairwise compatibility, which has been implemented on Python 3.6 and tensorflow.
+To globally reassemble, we designed a loop-based composition to calculate consistently reassembly result. The global algorithm has been implemented in C++ on Microsoft Visual Studio 2015 with CUDA 8 or 9 support. 
 
-If you want to compile or run this code on different development environment, a few of modifications will be needed.
+You should install below dependencies to run pairwise compatibility measurement part.
+* Python 3.6
+* Tensorflow 1.7.0 and its dependencies
 
-The following install instruction only works on Windows10 X64 OS and Microsoft Visual Studio 2013 (x86 solution).
+You should install below libraries to run global reassembly part.
+* OpenCV 3.4.1
+* Eigen 3.3.4
+* CUDA 8.0 or 9.0
 
-For your convenience, the 3rd dependencies can be downloaded [here](https://drive.google.com/open?id=1mQyDLpdVoQKWVBcRU9iTdNWRnw1liQKY).
+Other version of those dependencies have not tested.
 
-
-Modify environment variables
---------------------
-After Install/unzip all of dependencies. You should create some environment variables and specify correct path. Please refer "env.txt" for more details.
-
-
-# 2. Build
-When you finish all of environment configuration, you can use VS2013 to build the whole project. If all goes well, you can run it without any errors.
+If you want to compile or run this code on different environments, a few of modifications will be needed.
 
 
-# 3. Datasets and trained net parameters
-Our experiment datasets can be downloaded [here](https://drive.google.com/open?id=1sUIcAzFTJNAAEEhqdYAKMKgzjVwRvsP4).
+
+# 2. Run pairwise compatibility measurement
+
+
+# 3. Run global reassembly
+
+
+# 4. Datasets and pre-trained net parameters
+Our experiment datasets and pre-trained model can be downloaded [here](https://drive.google.com/open?id=1sUIcAzFTJNAAEEhqdYAKMKgzjVwRvsP4).
 
 From this link, you can find 5 different datasets (one for training and four for testing) and the JigsawCNN parameters checkpoint which has been trained from the training dataset. 
 
 You can directly load this checkpoint to run the example data. 
 
 Note: For successfully load the checkpoint on your machine, you should modify the checkpoint file to correct path (i.e. JigsawCNN_checkpoint/g0/checkpoint, JigsawCNN_checkpoint/g1/checkpoint, ...). 
-Since this code has been implemented on tensorflow, and the pretrained parameters can only be used on tensorflow net.
+Since this code has been implemented on tensorflow, and the pretrained parameters can only be used on tensorflow library.
 
 
 
