@@ -65,8 +65,10 @@ You can find data/file format demonstration in the 'Examples' folder.
 
 # 3. Run global reassembly
 
+Global reassembly module is developed in C++ with CUDA support. For the algorithm details, please check our paper.
+
 You can find a running example (run.bat) in the 'Examples' folder. 
-Following the corresponding data format, you should be able run after compiling
+If you successfully compile this module, you can run the example data by following the corresponding data format.
 
 
 # 4. Run the example data
@@ -75,7 +77,7 @@ Put your own compiled GlobalReassembly.exe into Examples folder, and then run th
 
 If everything goes well, you will get several output files (filtered_alignments.txt, pose_result_x.txt, reassembled_result_x.png and selected_transformation.txt)
 
-We have put those output files into the folders just for refering. 
+We have already put those output files into the folders for refering. 
 
 
 
