@@ -37,33 +37,30 @@ If you want to compile or run this code on different environments, a few of modi
 
 We provide three modes to drive our scripts. 
 
-"training": train network on training dataset. Please read the code to make sure all of pathes are set correctly.
-
-"batch_testing": test network performance on tfrecord. You should prepare the testing data before you run.
-
-"single_testing": test network performance on image data. You just need to prepare the pairwise alignment file. The image merging will be done by our program.
-
-Please check the 'Examples' folder for data/file format.
-
 Training
 ------------
+Train network on training dataset. Please read the code to make sure all of pathes are set correctly.
 ```
 python boost.py -m training
 ```
 
 batch_testing
 ------------
+Test network performance on tfrecord. You should prepare the testing data before you run.
 ```
 python boost.py -m batch_testing
 ```
 
 single_testing
 ------------
+Test network performance on image data. You just need to prepare the pairwise alignment file. The image merging will be done by our program.
 ```
 python boost.py -m single_testing
 ```
 
 We recommend you reading the code to figure out how to modify the path and tune whatever you want. We think the structure of code is relatively clear and it should be self-explanatory.
+
+You can find data/file format demonstration in the 'Examples' folder.
 
 
 # 3. Run global reassembly
