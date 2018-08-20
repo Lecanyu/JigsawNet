@@ -81,7 +81,7 @@ We have already put those output files into the folders for refering.
 
 
 
-# 4. Datasets and pre-trained net parameters
+# 5. Datasets and pre-trained net parameters
 Our experiment datasets and pre-trained model can be downloaded [here](https://drive.google.com/open?id=1sUIcAzFTJNAAEEhqdYAKMKgzjVwRvsP4).
 
 From this link, you can find 5 different datasets (one for training and four for testing) and the JigsawCNN parameters checkpoint which has been trained from the training dataset. 
@@ -96,5 +96,5 @@ Since this code has been implemented on tensorflow, and the pretrained parameter
 
 
 
-# 4. Citation
+# 6. Citation
 If this implementation is useful in your research, please cite XXX
