@@ -156,9 +156,9 @@ def Evaluation(net, input, roi_box, target, weights, data_ids, checkpoint_dir, i
                     if pred[i] == gt[i] and pred[i] == 1:
                         tp += 1
                     if pred[i] != gt[i] and pred[i] == 0:
-                        fp += 1
-                    if pred[i] != gt[i] and pred[i] == 1:
                         fn += 1
+                    if pred[i] != gt[i] and pred[i] == 1:
+                        fp += 1
         except tf.errors.OutOfRangeError:
             print('\nDone testing -- epoch limit reached')
         finally:
@@ -280,9 +280,9 @@ def BatchTest(checkpoint_root, testing_tfrecord_filename, K, net, Alpha, is_trai
             if pred == gt and pred == 0:
                 tn[i+1] += 1
             if pred != gt and pred == 1:
-                fn[i+1] += 1
-            if pred != gt and pred == 0:
                 fp[i+1] += 1
+            if pred != gt and pred == 0:
+                fn[i+1] += 1
 
             # f[i + 1].write("%f\t%d\n" % (prob[1], gt))
 
@@ -307,9 +307,9 @@ def BatchTest(checkpoint_root, testing_tfrecord_filename, K, net, Alpha, is_trai
         if final_class_prob==gt and final_class_prob==0:
             tn_prob[0]+=1
         if final_class_prob!=gt and final_class_prob==1:
-            fn_prob[0]+=1
-        if final_class_prob!=gt and final_class_prob==0:
             fp_prob[0]+=1
+        if final_class_prob!=gt and final_class_prob==0:
+            fn_prob[0]+=1
 
         sign = np.sum(np.multiply(preds, Alpha))
         if sign>0:
@@ -321,9 +321,9 @@ def BatchTest(checkpoint_root, testing_tfrecord_filename, K, net, Alpha, is_trai
         if final_class==gt and final_class==0:
             tn[0]+=1
         if final_class!=gt and final_class==1:
-            fn[0]+=1
-        if final_class!=gt and final_class==0:
             fp[0]+=1
+        if final_class!=gt and final_class==0:
+            fn[0]+=1
 
         # f[0].write("%f\t%d\n" % (correct_probability, gt))
 
@@ -401,9 +401,9 @@ def ValidatePathNet(alignments, gt_pose, fragments_dir, net, evaluator, K, Alpha
             if preds[i] == gt and preds[i] == 0:
                 tn[i + 1] += 1
             if preds[i] != gt and preds[i] == 1:
-                fn[i + 1] += 1
-            if preds[i] != gt and preds[i] == 0:
                 fp[i + 1] += 1
+            if preds[i] != gt and preds[i] == 0:
+                fn[i + 1] += 1
 
             if save_all_leaner:
                 f[i + 1].write("%d\t%d\t%f\t%d\t%d\n" % (v1, v2, probs[i][1], gt, preds[i]))
@@ -438,11 +438,11 @@ def ValidatePathNet(alignments, gt_pose, fragments_dir, net, evaluator, K, Alpha
             if final_class == gt and final_class == 0:
                 tn[0] += 1
             if final_class != gt and final_class == 1:
-                fn[0] += 1
+                fp[0] += 1
                 # f1.write("%d\t%d\t%f\t1\n" % (v1, v2, correct_probability))
                 # f1.write("%f %f %f\n%f %f %f\n0 0 1\n" % (trans[0, 0], trans[0, 1], trans[0, 2], trans[1, 0], trans[1, 1], trans[1, 2]))
             if final_class != gt and final_class == 0:
-                fp[0] += 1
+                fn[0] += 1
             f[0].write("%d\t%d\t%f\t%d\t%d\n" % (v1, v2, correct_probability, gt, final_class))
             f[0].write("%f %f %f\n%f %f %f\n0 0 1\n" % (trans[0, 0], trans[0, 1], trans[0, 2], trans[1, 0], trans[1, 1], trans[1, 2]))
         else:
@@ -453,11 +453,11 @@ def ValidatePathNet(alignments, gt_pose, fragments_dir, net, evaluator, K, Alpha
             if final_class == gt and final_class == 0:
                 tn[0] += 1
             if final_class != gt and final_class == 1:
-                fn[0] += 1
+                fp[0] += 1
                 f1.write("%d\t%d\t%f\t1\n" % (v1, v2, correct_probability))
                 f1.write("%f %f %f\n%f %f %f\n0 0 1\n" % (trans[0, 0], trans[0, 1], trans[0, 2], trans[1, 0], trans[1, 1], trans[1, 2]))
             if final_class != gt and final_class == 0:
-                fp[0] += 1
+                fn[0] += 1
 
     if save_all_leaner:
         for i in range(len(f)):
