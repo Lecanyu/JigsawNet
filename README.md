@@ -4,7 +4,7 @@ JigsawNet is an image fragment reassembly system based on convolutional neural n
 
 This repository includes CNN-based pairwise alignment measurement and loop-closure based global composition. Please check our published paper for more algorithm details....
 
-There are some of reassembly results from various public datasets and our own datasets (1st, 2nd and 3rd row contains 9, 100, 376 piece fragments repectively).
+There are some of reassembly results from various public datasets and our own datasets (1st, 2nd, 3rd and 4th row contains 9, 36, 100, 376 piece fragments repectively).
 
 ![demon](https://raw.githubusercontent.com/Lecanyu/JigsawNet/master/Examples/demo.png)
 
