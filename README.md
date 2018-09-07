@@ -2,7 +2,7 @@
 
 JigsawNet is an image fragment reassembly system based on convolutional neural network. It is able to robustly reassemble irregular shredded image fragments.
 
-This repository includes CNN-based pairwise alignment measurement and loop-closure based global reassembly. Please check our published paper for more algorithm details....
+This repository includes CNN-based pairwise alignment measurement and loop-closure based global composition. Please check our published paper for more algorithm details....
 
 There are some of reassembly results from various public datasets and our own datasets (1st, 2nd and 3rd row contains 9, 100, 376 piece fragments repectively).
 
@@ -80,8 +80,14 @@ If everything goes well, you will get several output files (filtered_alignments.
 We have already put those output files into the folders for refering. 
 
 
+# 5. Run your own datasets
 
-# 5. Datasets and pre-trained net parameters
+To solve your own jigsaw puzzles, a pairwise alignment calculation module is needed. In our experiment, we use an [existing method](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.683.4733&rep=rep1&type=pdf) to calculate pairwise alignment candidates. But you can use other more fancy algorithms to do it.
+
+The pairwise alignments are represented by a list of 3x3 rigid transformation matrix. Please check our example data for the format details.
+
+
+# 6. Datasets and pre-trained net parameters
 Our experiment datasets and pre-trained model can be downloaded [here](https://drive.google.com/open?id=1sUIcAzFTJNAAEEhqdYAKMKgzjVwRvsP4).
 
 From this link, you can find 5 different datasets (one for training and four for testing) and the JigsawCNN parameters checkpoint which has been trained from the training dataset. 
@@ -94,7 +100,5 @@ Since this code has been implemented on tensorflow, and the pretrained parameter
 
 
 
-
-
-# 6. Citation
+# 7. Citation
 If this implementation is useful in your research, please cite XXX
