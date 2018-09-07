@@ -82,7 +82,7 @@ We have already put those output files into the folders for refering.
 
 # 5. Run your own datasets
 
-To solve your own jigsaw puzzles, a pairwise alignment calculation module is needed. In our experiment, we use an [existing method](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.683.4733&rep=rep1&type=pdf) to calculate pairwise alignment candidates. But you can use other more fancy algorithms to do it.
+To solve your own jigsaw puzzles, a pairwise alignment calculation module is needed. In our experiments, we use an [existing method](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.683.4733&rep=rep1&type=pdf) to calculate pairwise alignment candidates. But you can use other more fancy algorithms to do it.
 
 The pairwise alignments are represented by a list of 3x3 rigid transformation matrix. Please check our example data for the format details.
 
