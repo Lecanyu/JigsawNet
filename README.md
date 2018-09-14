@@ -2,7 +2,7 @@
 
 JigsawNet is an image fragment reassembly system based on convolutional neural network. It is able to robustly reassemble irregular shredded image fragments.
 
-This repository includes CNN-based pairwise alignment measurement and loop-closure based global composition. Please check our published paper for more algorithm details....
+This repository includes CNN-based pairwise alignment measurement and loop-closure based global composition. Please check our published [paper](https://arxiv.org/pdf/1809.04137.pdf) for more algorithm details.
 
 There are some of reassembly results from various public datasets and our own datasets (1st, 2nd, 3rd and 4th row contains 9, 36, 100, 376 piece fragments repectively). More results are demonstrated in our paper.
 
@@ -101,4 +101,13 @@ Since this code has been implemented on tensorflow, and the pretrained parameter
 
 
 # 7. Citation
-If this implementation is useful in your research, please cite XXX
+If our work is useful in your research, please cite 
+
+```
+@article{le2018jigsaw,
+  title={JigsawNet: Shredded Image Reassembly using Convolutional Neural Network and Loop-based Composition},
+  author={Le, Canyu and Li, Xin},
+  journal={arXiv preprint arXiv:1809.04137},
+  year={2018}
+}
+```
